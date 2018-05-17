@@ -1,0 +1,11 @@
+[Unit]
+Description=IpNotifier Client
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/opt/ipnotifier/ipnotifier http://#IP#:8080/update
+
+[Install]
+WantedBy=multi-user.target
